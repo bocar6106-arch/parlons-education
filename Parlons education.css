@@ -1,0 +1,361 @@
+/* IDENTITÉ VISUELLE */
+:root {
+    --bleu: #0878D1;
+    --jaune: #d1af15;
+    --rouge: #D92732;
+    --vert: #079447; 
+    --blanc: #FFFFFF;
+    --bleu-nuit: #172B45;
+    --fond: #F5F8FC;
+    --texte: #26364A;
+}
+
+/* REGLAGES GÉNÉRAUX */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    line-height: 1.7;
+}
+
+/* EN-TÊTE */
+header {
+    background: var(--blanc);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.identite-site {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.identite-site img {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.identite-site h1 {
+    color: var(--bleu);
+    font-size: 23px;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--bleu-nuit);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--rouge);
+}
+
+/* BANNIÈRE PRINCIPALE */
+.hero {
+    background:
+        linear-gradient(rgba(8, 120, 209, 0.28), rgba(7, 85, 165, 0.42)),
+        url("1/Photo5.jpeg") center 42% / cover no-repeat;
+
+    color: var(--blanc);
+    text-align: center;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 8%;
+}
+
+.hero h2 {
+    color: var(--blanc);
+    font-size: 42px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+}
+
+/* BOUTON */
+.btn {
+    display: inline-block;
+    background: var(--rouge);
+    color: var(--blanc);
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #B91E28;
+}
+
+/* SECTIONS */
+.section {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    color: var(--bleu);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* BANDEROLS ILLUSTRÉES */
+.bandeau {
+    position: relative;
+    isolation: isolate;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--blanc);
+}
+
+.bandeau::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(rgba(8, 120, 209, 0.28), rgba(7, 85, 165, 0.42));
+}
+
+.bandeau h2,
+.bandeau p {
+    color: var(--blanc);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
+}
+
+.apropos-bandeau {
+    background-image: url("1/Photo2.jpeg");
+    background-position: center 38%;
+}
+
+.missions-bandeau {
+    background-image: url("1/Photo1.jpeg");
+    background-position: center 45%;
+}
+
+.actualites-bandeau {
+    background-image: url("1/Photo4.jpeg");
+    background-position: center 40%;
+}
+
+.contact-bandeau {
+    background-image: url("1/Photo13.jpeg");
+    background-position: center 42%;
+}
+
+/* MISSIONS */
+.missions:not(.bandeau) {
+    background: var(--blanc);
+}
+
+/* GALERIE */
+.galerie {
+    background: var(--fond);
+}
+
+.galerie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 35px auto 0;
+}
+
+.galerie-grid figure {
+    height: 230px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--blanc);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.09);
+}
+
+.galerie-grid img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.galerie-grid figure:hover img {
+    transform: scale(1.04);
+}
+
+.galerie-grid .photo-supplementaire {
+    display: none;
+}
+
+.galerie-grid.galerie-complete .photo-supplementaire {
+    display: block;
+    animation: apparition-photo 0.35s ease;
+}
+
+.btn-galerie {
+    min-width: 58px;
+    height: 58px;
+    margin: 28px auto 0;
+    border: 0;
+    border-radius: 50px;
+    background: var(--bleu);
+    color: var(--blanc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 14px rgba(8, 120, 209, 0.25);
+}
+
+.btn-galerie-plus {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.btn-galerie[aria-expanded="true"] .btn-galerie-plus {
+    transform: rotate(45deg);
+}
+
+@keyframes apparition-photo {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RUBRIQUES */
+.rubriques {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.rubriques article {
+    background: var(--blanc);
+    padding: 30px 20px;
+    border-radius: 10px;
+    border-bottom: 5px solid var(--jaune);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.rubriques article:nth-child(2) {
+    border-bottom-color: var(--rouge);
+}
+
+.rubriques article:nth-child(3) {
+    border-bottom-color: var(--vert);
+}
+
+.rubriques h3 {
+    color: var(--bleu);
+    margin-bottom: 12px;
+}
+
+.rubriques article p {
+    color: var(--texte);
+}
+
+/* CONTACT */
+.contact:not(.bandeau) {
+    background: var(--blanc);
+}
+
+/* PIED DE PAGE */
+footer {
+    background: var(--bleu-nuit);
+    color: var(--blanc);
+    text-align: center;
+    padding: 30px 15px;
+}
+
+/* ADAPTATION AUX TÉLÉPHONES */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    .identite-site img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .identite-site h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 75px 6%;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .rubriques {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 50px 6%;
+    }
+
+    .bandeau {
+        min-height: 280px;
+        background-position: center;
+    }
+}
