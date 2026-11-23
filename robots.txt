@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bocar6106-arch.github.io/parlons-education/sitemap.xml
