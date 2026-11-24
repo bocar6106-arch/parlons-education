@@ -31,8 +31,10 @@ if (boutonGalerie && grilleGalerie) {
 
         grilleGalerie.classList.toggle("galerie-complete", !ouverte);
         boutonGalerie.setAttribute("aria-expanded", String(!ouverte));
+        boutonGalerie.querySelector(".btn-galerie-plus").textContent =
+            ouverte ? "+" : "−";
         boutonGalerie.querySelector(".btn-galerie-label").textContent =
-            ouverte ? "Voir toutes les photos" : "Réduire la galerie";
+            ouverte ? "9 autres photos" : "Réduire la galerie";
     });
 }
 
