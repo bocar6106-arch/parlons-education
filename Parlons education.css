@@ -59,6 +59,17 @@ header {
     font-size: 23px;
 }
 
+.identite-lien {
+    color: var(--bleu);
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.identite-lien img {
+    display: block;
+}
+
 /* NAVIGATION */
 nav {
     display: flex;
@@ -343,6 +354,139 @@ nav a:hover {
     border-bottom-color: var(--vert);
 }
 
+/* CONTRIBUTIONS ET PARTENARIATS */
+.participation {
+    background: var(--fond);
+}
+
+.formulaire-participatif {
+    display: grid;
+    gap: 20px;
+    max-width: 760px;
+    margin: 35px auto 0;
+    padding: 32px;
+    border-radius: 12px;
+    background: var(--blanc);
+    box-shadow: 0 3px 16px rgba(23, 43, 69, 0.1);
+    text-align: left;
+}
+
+.champ-formulaire {
+    display: grid;
+    gap: 7px;
+}
+
+.champ-formulaire label {
+    color: var(--bleu-nuit);
+    font-weight: bold;
+}
+
+.champ-formulaire input,
+.champ-formulaire select,
+.champ-formulaire textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #b8c5d3;
+    border-radius: 6px;
+    background: var(--blanc);
+    color: var(--texte);
+    font: inherit;
+}
+
+.champ-formulaire textarea {
+    resize: vertical;
+}
+
+.champ-formulaire input:focus,
+.champ-formulaire select:focus,
+.champ-formulaire textarea:focus {
+    outline: 3px solid rgba(8, 120, 209, 0.2);
+    border-color: var(--bleu);
+}
+
+.champ-formulaire small {
+    color: #536477;
+}
+
+.consentement-formulaire {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.consentement-formulaire input {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    margin-top: 5px;
+    accent-color: var(--bleu);
+}
+
+.formulaire-participatif button {
+    justify-self: start;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+}
+
+.champ-cache {
+    display: none;
+}
+
+.partenariats-hero {
+    background:
+        linear-gradient(rgba(8, 85, 165, 0.55), rgba(7, 85, 165, 0.68)),
+        url("1/Photo12.jpeg") center 42% / cover no-repeat;
+}
+
+.partenariats-hero h1 {
+    margin-bottom: 15px;
+    color: var(--blanc);
+    font-size: 42px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+.partenariats-hero p {
+    max-width: 760px;
+    margin-bottom: 28px;
+}
+
+.partenariats-contenu {
+    background: var(--blanc);
+}
+
+.partenaires-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 900px;
+    margin: 32px auto 0;
+    padding: 0;
+    list-style: none;
+}
+
+.partenaires-list li {
+    padding: 18px;
+    border-left: 4px solid var(--bleu);
+    border-radius: 6px;
+    background: var(--fond);
+    text-align: left;
+}
+
+.page-merci {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.page-merci h1 {
+    color: var(--bleu);
+}
+
 /* CONTACT */
 .contact:not(.bandeau) {
     background: var(--blanc);
@@ -389,6 +533,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .partenaires-list {
+        grid-template-columns: 1fr;
+    }
+
     .thematiques-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -406,5 +554,13 @@ footer {
 @media (max-width: 480px) {
     .thematiques-list {
         grid-template-columns: 1fr;
+    }
+
+    .formulaire-participatif {
+        padding: 22px;
+    }
+
+    .partenariats-hero h1 {
+        font-size: 34px;
     }
 }

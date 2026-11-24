@@ -63,7 +63,9 @@
             <a href="#galerie">Galerie</a>
             <a href="#actualites">Actualités</a>
             <a href="#thematiques">Thématiques</a>
+            <a href="#parole-jeunes">La parole aux jeunes</a>
             <a href="#missions">Nos missions</a>
+            <a href="partenariats.html">Partenariats</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -207,6 +209,56 @@
             </article>
 
         </div>
+
+    </section>
+
+    <!-- LA PAROLE AUX JEUNES -->
+    <section id="parole-jeunes" class="section participation">
+
+        <h2>La parole aux jeunes</h2>
+        <p>
+            Jeunes du Sénégal, partagez vos témoignages, vos préoccupations,
+            vos propositions ou vos expériences. Votre contribution sera lue
+            par l'équipe de Parlons Éducation et ne sera pas publiée automatiquement.
+        </p>
+
+        <form class="formulaire-participatif" name="parole-aux-jeunes" method="POST"
+              action="/merci.html" data-netlify="true" netlify-honeypot="champ-cache-jeunes">
+            <input type="hidden" name="form-name" value="parole-aux-jeunes">
+            <p class="champ-cache" aria-hidden="true">
+                <label>Ne pas remplir : <input name="champ-cache-jeunes" tabindex="-1" autocomplete="off"></label>
+            </p>
+
+            <div class="champ-formulaire">
+                <label for="type-contribution">Type de contribution</label>
+                <select id="type-contribution" name="type-de-contribution" required>
+                    <option value="" selected disabled>Choisir une catégorie</option>
+                    <option value="Témoignage">Témoignage</option>
+                    <option value="Préoccupation">Préoccupation</option>
+                    <option value="Proposition">Proposition</option>
+                    <option value="Expérience">Expérience</option>
+                </select>
+            </div>
+
+            <div class="champ-formulaire">
+                <label for="pseudo-jeune">Prénom ou pseudonyme (facultatif)</label>
+                <input id="pseudo-jeune" name="prenom-ou-pseudonyme" type="text" maxlength="60" autocomplete="nickname">
+            </div>
+
+            <div class="champ-formulaire">
+                <label for="message-jeune">Votre message</label>
+                <textarea id="message-jeune" name="message" rows="7" maxlength="5000" required
+                          aria-describedby="aide-message-jeune"></textarea>
+                <small id="aide-message-jeune">Évitez d'inclure des coordonnées ou des informations privées sur vous ou une autre personne.</small>
+            </div>
+
+            <label class="consentement-formulaire">
+                <input type="checkbox" name="accord-lecture" value="oui" required>
+                <span>J'ai compris que l'équipe lira ma contribution et qu'elle ne sera pas publiée sans validation.</span>
+            </label>
+
+            <button class="btn" type="submit">Envoyer ma contribution</button>
+        </form>
 
     </section>
 

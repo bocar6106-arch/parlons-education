@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partenariats | Parlons Éducation</title>
+    <meta name="description" content="Institutions, entreprises, associations et organisations : découvrez comment collaborer avec Parlons Éducation.">
+    <meta name="author" content="Parlons Éducation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://parlons-education.netlify.app/partenariats.html">
+    <link rel="icon" type="image/jpeg" href="1/Logo%20PARLONS%20EDUCATION.jpeg">
+    <link rel="stylesheet" href="Parlons education.css">
+</head>
+
+<body>
+    <header>
+        <a class="identite-site identite-lien" href="index.html" aria-label="Parlons Éducation - accueil">
+            <img src="1/Logo PARLONS EDUCATION.jpeg" alt="">
+            <span>PARLONS ÉDUCATION</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <a href="index.html">Accueil</a>
+            <a href="index.html#thematiques">Thématiques</a>
+            <a href="index.html#parole-jeunes">La parole aux jeunes</a>
+            <a href="partenariats.html" aria-current="page">Partenariats</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero partenariats-hero">
+            <h1>Partenariats</h1>
+            <p>Ensemble, faisons avancer le dialogue et les initiatives en faveur de l'éducation et de la jeunesse au Sénégal.</p>
+            <a class="btn" href="#proposer-un-partenariat">Proposer une collaboration</a>
+        </section>
+
+        <section class="section partenariats-contenu">
+            <h2>Construisons des projets ensemble</h2>
+            <p>
+                Cette page s'adresse aux institutions, entreprises, associations et organisations
+                qui souhaitent collaborer avec Parlons Éducation. Nous sommes ouverts aux échanges,
+                aux initiatives communes et aux partenariats qui contribuent à informer, sensibiliser
+                et valoriser les expériences des jeunes.
+            </p>
+
+            <ul class="partenaires-list">
+                <li>Institutions et acteurs de l'éducation</li>
+                <li>Entreprises et acteurs de la formation</li>
+                <li>Associations et organisations de jeunesse</li>
+                <li>Organisations engagées pour la santé, la culture et l'insertion</li>
+            </ul>
+        </section>
+
+        <section id="proposer-un-partenariat" class="section participation">
+            <h2>Proposer un partenariat</h2>
+            <p>Présentez brièvement votre organisation et votre idée de collaboration. L'équipe vous recontactera au sujet de votre demande.</p>
+
+            <form class="formulaire-participatif" name="demande-partenariat" method="POST"
+                  action="/merci.html" data-netlify="true" netlify-honeypot="champ-cache-partenariat">
+                <input type="hidden" name="form-name" value="demande-partenariat">
+                <p class="champ-cache" aria-hidden="true">
+                    <label>Ne pas remplir : <input name="champ-cache-partenariat" tabindex="-1" autocomplete="off"></label>
+                </p>
+
+                <div class="champ-formulaire">
+                    <label for="organisation">Organisation</label>
+                    <input id="organisation" name="organisation" type="text" maxlength="120" required autocomplete="organization">
+                </div>
+
+                <div class="champ-formulaire">
+                    <label for="type-organisation">Type d'organisation</label>
+                    <select id="type-organisation" name="type-dorganisation" required>
+                        <option value="" selected disabled>Choisir une catégorie</option>
+                        <option value="Institution">Institution</option>
+                        <option value="Entreprise">Entreprise</option>
+                        <option value="Association">Association</option>
+                        <option value="Organisation">Autre organisation</option>
+                    </select>
+                </div>
+
+                <div class="champ-formulaire">
+                    <label for="courriel-partenaire">Adresse e-mail de contact</label>
+                    <input id="courriel-partenaire" name="email" type="email" maxlength="254" required autocomplete="email">
+                </div>
+
+                <div class="champ-formulaire">
+                    <label for="message-partenariat">Votre proposition</label>
+                    <textarea id="message-partenariat" name="proposition" rows="6" maxlength="5000" required></textarea>
+                </div>
+
+                <label class="consentement-formulaire">
+                    <input type="checkbox" name="accord-recontact" value="oui" required>
+                    <span>J'accepte d'être recontacté au sujet de cette proposition de partenariat.</span>
+                </label>
+
+                <button class="btn" type="submit">Envoyer la proposition</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Parlons Éducation. Tous droits réservés.</p>
+        <p><a href="index.html">Retour à l'accueil</a></p>
+    </footer>
+</body>
+</html>
