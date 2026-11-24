@@ -180,6 +180,11 @@ nav a:hover {
     background-position: center 40%;
 }
 
+.thematiques-bandeau {
+    background-image: url("1/Photo6.jpeg");
+    background-position: center 42%;
+}
+
 .contact-bandeau {
     background-image: url("1/Photo13.jpeg");
     background-position: center 42%;
@@ -304,6 +309,40 @@ nav a:hover {
     color: var(--texte);
 }
 
+/* THÉMATIQUES */
+.thematiques-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1100px;
+    margin: 35px auto 0;
+    padding: 0;
+    list-style: none;
+}
+
+.thematiques-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    border-bottom: 5px solid var(--jaune);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    color: var(--bleu-nuit);
+    font-weight: bold;
+    text-shadow: none;
+}
+
+.thematiques-list li:nth-child(3n + 2) {
+    border-bottom-color: var(--rouge);
+}
+
+.thematiques-list li:nth-child(3n) {
+    border-bottom-color: var(--vert);
+}
+
 /* CONTACT */
 .contact:not(.bandeau) {
     background: var(--blanc);
@@ -350,6 +389,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .thematiques-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .section {
         padding: 50px 6%;
     }
@@ -357,5 +400,11 @@ footer {
     .bandeau {
         min-height: 280px;
         background-position: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .thematiques-list {
+        grid-template-columns: 1fr;
     }
 }
