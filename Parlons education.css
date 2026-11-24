@@ -5,9 +5,10 @@
     --rouge: #D92732;
     --vert: #079447; 
     --blanc: #FFFFFF;
-    --bleu-nuit: #172B45;
-    --fond: #F5F8FC;
+    --bleu-nuit: #142a43;
+    --fond: #F3F7FB;
     --texte: #26364A;
+    --ombre-douce: 0 12px 30px rgba(20, 42, 67, 0.12);
 }
 
 /* REGLAGES GÉNÉRAUX */
@@ -22,10 +23,11 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     background: var(--fond);
     color: var(--texte);
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
 img,
@@ -51,6 +53,8 @@ header {
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
+    border-bottom: 1px solid rgba(20, 42, 67, 0.08);
+    box-shadow: 0 4px 18px rgba(20, 42, 67, 0.05);
 }
 
 .header-top {
@@ -96,7 +100,7 @@ header {
 /* NAVIGATION */
 nav {
     display: flex;
-    gap: 22px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
@@ -104,10 +108,14 @@ nav a {
     color: var(--bleu-nuit);
     text-decoration: none;
     font-weight: bold;
+    padding: 8px 11px;
+    border-radius: 999px;
+    transition: color 180ms ease, background-color 180ms ease;
 }
 
 nav a:hover {
     color: var(--rouge);
+    background: rgba(8, 120, 209, 0.08);
 }
 
 .visually-hidden {
@@ -125,12 +133,12 @@ nav a:hover {
 /* BANNIÈRE PRINCIPALE */
 .hero {
     background:
-        linear-gradient(rgba(8, 120, 209, 0.28), rgba(7, 85, 165, 0.42)),
+        linear-gradient(125deg, rgba(13, 35, 59, 0.82), rgba(8, 91, 157, 0.62)),
         url("1/Photo5.jpeg") center 42% / cover no-repeat;
 
     color: var(--blanc);
     text-align: center;
-    min-height: 500px;
+    min-height: 560px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,19 +148,23 @@ nav a:hover {
 
 .hero h2 {
     color: var(--blanc);
-    font-size: 48px;
+    max-width: 950px;
+    font-size: clamp(44px, 5vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
     margin-bottom: 15px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
 }
 
 .hero-eyebrow {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     color: var(--blanc);
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 0.12em;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
     text-transform: uppercase;
+    opacity: 0.92;
 }
 
 .hero p.hero-eyebrow {
@@ -179,23 +191,31 @@ nav a:hover {
     display: inline-block;
     background: var(--rouge);
     color: var(--blanc);
-    padding: 12px 25px;
-    border-radius: 6px;
+    padding: 14px 27px;
+    border: 2px solid transparent;
+    border-radius: 999px;
     text-decoration: none;
     font-weight: bold;
+    box-shadow: 0 8px 20px rgba(10, 34, 57, 0.18);
+    transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
 .btn:hover {
     background: #B91E28;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(10, 34, 57, 0.22);
 }
 
 .btn-secondaire {
     border: 2px solid var(--blanc);
     background: transparent;
+    box-shadow: none;
+    backdrop-filter: blur(5px);
 }
 
 .btn-secondaire:hover {
     background: rgba(255, 255, 255, 0.18);
+    box-shadow: none;
 }
 
 /* SECTIONS */
@@ -206,13 +226,27 @@ nav a:hover {
 
 .section h2 {
     color: var(--bleu);
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: clamp(31px, 3vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+    text-wrap: balance;
+}
+
+.section h2::after {
+    content: "";
+    display: block;
+    width: 52px;
+    height: 4px;
+    margin: 15px auto 0;
+    border-radius: 999px;
+    background: var(--jaune);
 }
 
 .section p {
     max-width: 900px;
     margin: auto;
+    line-height: 1.8;
 }
 
 /* BANDEROLS ILLUSTRÉES */
@@ -234,13 +268,13 @@ nav a:hover {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(rgba(8, 120, 209, 0.28), rgba(7, 85, 165, 0.42));
+    background: linear-gradient(125deg, rgba(13, 35, 59, 0.82), rgba(8, 91, 157, 0.62));
 }
 
 .bandeau h2,
 .bandeau p {
     color: var(--blanc);
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.42);
 }
 
 .apropos-bandeau {
@@ -283,11 +317,18 @@ nav a:hover {
     max-width: 760px;
     margin: 34px auto 0;
     padding: 24px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.96);
-    box-shadow: 0 4px 16px rgba(23, 43, 69, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: var(--ombre-douce);
     color: var(--texte);
     text-align: left;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.fondateur-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(20, 42, 67, 0.18);
 }
 
 .fondateur-badge {
@@ -390,9 +431,17 @@ nav a:hover {
 .missions-grid article {
     min-height: 190px;
     padding: 26px 24px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 16px rgba(23, 43, 69, 0.14);
+    border: 1px solid rgba(20, 42, 67, 0.06);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: var(--ombre-douce);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.points-forts article:hover,
+.missions-grid article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 36px rgba(20, 42, 67, 0.17);
 }
 
 .points-forts h3,
@@ -430,9 +479,9 @@ nav a:hover {
     position: relative;
     height: 230px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 16px;
     background: var(--blanc);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.09);
+    box-shadow: var(--ombre-douce);
 }
 
 .galerie-grid figcaption {
@@ -556,9 +605,16 @@ nav a:hover {
     min-height: 220px;
     background: var(--blanc);
     padding: 30px 20px;
-    border-radius: 10px;
+    border: 1px solid rgba(20, 42, 67, 0.06);
+    border-radius: 16px;
     border-bottom: 5px solid var(--jaune);
-    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    box-shadow: var(--ombre-douce);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.rubriques article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 36px rgba(20, 42, 67, 0.17);
 }
 
 .rubriques article:nth-child(2) {
@@ -597,13 +653,20 @@ nav a:hover {
     gap: 10px;
     min-height: 190px;
     padding: 24px;
-    border-radius: 10px;
+    border: 1px solid rgba(20, 42, 67, 0.07);
+    border-radius: 16px;
     border-bottom: 5px solid var(--jaune);
     background: rgba(255, 255, 255, 0.94);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--ombre-douce);
     color: var(--bleu-nuit);
     font-weight: bold;
     text-shadow: none;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.thematiques-list li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(20, 42, 67, 0.17);
 }
 
 .thematiques-list h3 {
@@ -638,9 +701,10 @@ nav a:hover {
     max-width: 760px;
     margin: 35px auto 0;
     padding: 32px;
-    border-radius: 12px;
+    border: 1px solid rgba(20, 42, 67, 0.07);
+    border-radius: 18px;
     background: var(--blanc);
-    box-shadow: 0 3px 16px rgba(23, 43, 69, 0.1);
+    box-shadow: var(--ombre-douce);
     text-align: left;
 }
 
@@ -741,9 +805,16 @@ nav a:hover {
     min-height: 190px;
     padding: 28px;
     border-bottom: 5px solid var(--bleu);
-    border-radius: 10px;
+    border: 1px solid rgba(20, 42, 67, 0.06);
+    border-radius: 16px;
     background: var(--fond);
     text-align: left;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.partenaires-grid article:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ombre-douce);
 }
 
 .partenaires-grid article:nth-child(2) {
@@ -1181,7 +1252,14 @@ footer {
     .scroll-reveal,
     .galerie-grid img,
     .menu-toggle span,
-    .contact-social-link {
+    .contact-social-link,
+    .btn,
+    .fondateur-card,
+    .points-forts article,
+    .missions-grid article,
+    .rubriques article,
+    .thematiques-list li,
+    .partenaires-grid article {
         animation: none !important;
         transition: none !important;
         opacity: 1;
