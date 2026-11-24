@@ -6,7 +6,18 @@ const prefereMouvementReduit = window.matchMedia &&
 
 if (menu && navigation) {
     menu.addEventListener("click", function () {
-        navigation.classList.toggle("active");
+        const ouvert = menu.getAttribute("aria-expanded") === "true";
+        menu.setAttribute("aria-expanded", String(!ouvert));
+        menu.setAttribute("aria-label", ouvert ? "Ouvrir le menu" : "Fermer le menu");
+        navigation.classList.toggle("active", !ouvert);
+    });
+
+    navigation.addEventListener("click", function (event) {
+        if (event.target.closest("a")) {
+            navigation.classList.remove("active");
+            menu.setAttribute("aria-expanded", "false");
+            menu.setAttribute("aria-label", "Ouvrir le menu");
+        }
     });
 }
 

@@ -52,12 +52,18 @@
 
     <!-- EN-TÊTE -->
     <header>
-        <div class="identite-site">
-            <img src="1/Logo PARLONS EDUCATION.jpeg" alt="Logo de Parlons Éducation">
-            <h1>PARLONS ÉDUCATION</h1>
+        <div class="header-top">
+            <div class="identite-site">
+                <img src="1/Logo PARLONS EDUCATION.jpeg" alt="Logo de Parlons Éducation">
+                <h1>PARLONS ÉDUCATION</h1>
+            </div>
+            <button class="menu-toggle" type="button" aria-expanded="false"
+                    aria-controls="main-navigation" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
 
-        <nav>
+        <nav id="main-navigation" aria-label="Navigation principale">
             <a href="#accueil">Accueil</a>
             <a href="#apropos">À propos</a>
             <a href="#galerie">Galerie</a>
