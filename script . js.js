@@ -93,7 +93,8 @@ if (!prefereMouvementReduit) {
     const textesAAnimer = document.querySelectorAll(".typing-target");
     const cartesAAnimer = document.querySelectorAll(
         ".points-forts article, .missions-grid article, .thematiques-list li, " +
-        ".galerie-grid figure, .rubriques article, .guide-contribution li, .partenaires-grid article"
+        ".galerie-grid figure, .rubriques article, .guide-contribution li, " +
+        ".partenaires-grid article, .contact-social-link"
     );
 
     if ("IntersectionObserver" in window) {
