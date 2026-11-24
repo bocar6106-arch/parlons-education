@@ -331,23 +331,20 @@ nav a:hover {
     box-shadow: 0 18px 36px rgba(20, 42, 67, 0.18);
 }
 
-.fondateur-badge {
-    display: grid;
-    place-items: center;
-    width: 68px;
-    height: 68px;
+.fondateur-photo {
+    width: 96px;
+    height: 96px;
     flex: 0 0 auto;
     border-radius: 50%;
-    background: var(--bleu);
-    color: var(--blanc);
-    font-size: 22px;
-    font-weight: bold;
+    object-fit: cover;
+    object-position: center 28%;
 }
 
 .fondateur-identite h3 {
-    margin: 2px 0 4px;
+    margin: 2px 0 8px;
     color: var(--bleu-nuit);
     font-size: 21px;
+    line-height: 1.35;
 }
 
 .fondateur-identite a {
@@ -403,11 +400,12 @@ nav a:hover {
 }
 
 .profil-carte img {
-    width: 150px;
-    height: 150px;
+    width: 240px;
+    height: 280px;
     flex: 0 0 auto;
-    border-radius: 50%;
+    border-radius: 16px;
     object-fit: cover;
+    object-position: center 28%;
 }
 
 .profil-carte h2 {
@@ -1167,8 +1165,8 @@ footer {
     }
 
     .profil-carte img {
-        width: 120px;
-        height: 120px;
+        width: min(100%, 240px);
+        height: 260px;
     }
 
     .contact-actions {
@@ -1232,10 +1230,9 @@ footer {
         padding: 18px;
     }
 
-    .fondateur-badge {
-        width: 52px;
-        height: 52px;
-        font-size: 18px;
+    .fondateur-photo {
+        width: 72px;
+        height: 72px;
     }
 
     .fondateur-identite h3 {
