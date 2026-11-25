@@ -73,8 +73,14 @@
             <a href="#thematiques">Thématiques</a>
             <a href="#parole-jeunes">La parole aux jeunes</a>
             <a href="#missions">Nos missions</a>
+            <a href="prise-de-parole.html" target="_blank" rel="noopener">
+                Prendre la parole <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
+            </a>
             <a href="partenariats.html" target="_blank" rel="noopener">
                 Partenariats <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
+            </a>
+            <a href="soutenir.html" target="_blank" rel="noopener">
+                Soutenir <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
             </a>
             <a href="#contact">Contact</a>
         </nav>
@@ -94,9 +100,12 @@
 
         <div class="hero-actions">
             <a href="#apropos" class="btn">Découvrir la plateforme</a>
-            <a href="#parole-jeunes" class="btn btn-secondaire">Prendre la parole</a>
+            <a href="prise-de-parole.html" class="btn btn-secondaire" target="_blank" rel="noopener">
+                Prendre la parole <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
+            </a>
             <a href="partenariats.html" class="btn btn-secondaire" target="_blank" rel="noopener">
-                Proposer une collaboration <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
+                Devenir Partenaire de Parlons Education
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
             </a>
         </div>
 
@@ -320,43 +329,9 @@
             <li><strong>Proposez</strong> une idée pour faire évoluer les choses.</li>
         </ul>
 
-        <form class="formulaire-participatif" name="parole-aux-jeunes" method="POST"
-              action="/merci.html" data-netlify="true" netlify-honeypot="champ-cache-jeunes">
-            <input type="hidden" name="form-name" value="parole-aux-jeunes">
-            <p class="champ-cache" aria-hidden="true">
-                <label>Ne pas remplir : <input name="champ-cache-jeunes" tabindex="-1" autocomplete="off"></label>
-            </p>
-
-            <div class="champ-formulaire">
-                <label for="type-contribution">Type de contribution</label>
-                <select id="type-contribution" name="type-de-contribution" required>
-                    <option value="" selected disabled>Choisir une catégorie</option>
-                    <option value="Témoignage">Témoignage</option>
-                    <option value="Préoccupation">Préoccupation</option>
-                    <option value="Proposition">Proposition</option>
-                    <option value="Expérience">Expérience</option>
-                </select>
-            </div>
-
-            <div class="champ-formulaire">
-                <label for="pseudo-jeune">Prénom ou pseudonyme (facultatif)</label>
-                <input id="pseudo-jeune" name="prenom-ou-pseudonyme" type="text" maxlength="60" autocomplete="nickname">
-            </div>
-
-            <div class="champ-formulaire">
-                <label for="message-jeune">Votre message</label>
-                <textarea id="message-jeune" name="message" rows="7" maxlength="5000" required
-                          aria-describedby="aide-message-jeune"></textarea>
-                <small id="aide-message-jeune">Évitez d'inclure des coordonnées ou des informations privées sur vous ou une autre personne.</small>
-            </div>
-
-            <label class="consentement-formulaire">
-                <input type="checkbox" name="accord-lecture" value="oui" required>
-                <span>J'ai compris que l'équipe lira ma contribution et qu'elle ne sera pas publiée sans validation.</span>
-            </label>
-
-            <button class="btn" type="submit">Envoyer ma contribution</button>
-        </form>
+        <a class="btn" href="prise-de-parole.html" target="_blank" rel="noopener">
+            Prendre la parole <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
+        </a>
 
     </section>
 
@@ -373,9 +348,15 @@
         </p>
 
         <div class="contact-actions">
-            <a class="btn" href="#parole-jeunes">Partager une contribution</a>
+            <a class="btn" href="prise-de-parole.html" target="_blank" rel="noopener">
+                Prendre la parole <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
+            </a>
             <a class="btn btn-secondaire" href="partenariats.html" target="_blank" rel="noopener">
                 Découvrir les partenariats <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
+            </a>
+            <a class="btn btn-secondaire" href="soutenir.html" target="_blank" rel="noopener">
+                Soutenir financièrement Parlons Éducation
+                <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
             </a>
         </div>
 

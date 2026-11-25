@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prendre la parole | Parlons Éducation</title>
+    <meta name="description" content="Partagez un témoignage, une préoccupation, une proposition ou une expérience avec Parlons Éducation.">
+    <meta name="author" content="Parlons Éducation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://parlons-education.netlify.app/prise-de-parole.html">
+    <link rel="icon" type="image/jpeg" href="1/Logo%20PARLONS%20EDUCATION.jpeg">
+    <link rel="stylesheet" href="Parlons education.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu-principal">Passer au contenu</a>
+
+    <header>
+        <div class="header-top">
+            <a class="identite-site identite-lien" href="index.html" aria-label="Parlons Éducation - accueil">
+                <img src="1/Logo PARLONS EDUCATION.jpeg" alt="">
+                <span>PARLONS ÉDUCATION</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false"
+                    aria-controls="main-navigation" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav id="main-navigation" aria-label="Navigation principale">
+            <a href="index.html">Accueil</a>
+            <a href="index.html#thematiques">Thématiques</a>
+            <a href="partenariats.html" target="_blank" rel="noopener">
+                Partenariats <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
+            </a>
+            <a href="soutenir.html" target="_blank" rel="noopener">
+                Soutenir <span class="visually-hidden">(s’ouvre dans un nouvel onglet)</span>
+            </a>
+        </nav>
+    </header>
+
+    <main id="contenu-principal">
+        <section class="hero prise-de-parole-hero">
+            <p class="hero-eyebrow">La parole aux jeunes</p>
+            <h1>Prendre la parole</h1>
+            <p>Votre contribution sera lue par l'équipe de Parlons Éducation et ne sera pas publiée automatiquement.</p>
+            <a class="btn" href="#formulaire-contribution">Accéder au formulaire</a>
+        </section>
+
+        <section id="formulaire-contribution" class="section participation">
+            <h2>Partager une contribution</h2>
+            <p>
+                Jeunes du Sénégal, partagez vos témoignages, vos préoccupations,
+                vos propositions ou vos expériences.
+            </p>
+
+            <ul class="guide-contribution">
+                <li><strong>Racontez</strong> une expérience qui vous a marqué.</li>
+                <li><strong>Exprimez</strong> une difficulté ou une préoccupation.</li>
+                <li><strong>Proposez</strong> une idée pour faire évoluer les choses.</li>
+            </ul>
+
+            <form class="formulaire-participatif" name="parole-aux-jeunes" method="POST"
+                  action="/merci.html" data-netlify="true" netlify-honeypot="champ-cache-jeunes">
+                <input type="hidden" name="form-name" value="parole-aux-jeunes">
+                <p class="champ-cache" aria-hidden="true">
+                    <label>Ne pas remplir : <input name="champ-cache-jeunes" tabindex="-1" autocomplete="off"></label>
+                </p>
+
+                <div class="champ-formulaire">
+                    <label for="type-contribution">Type de contribution</label>
+                    <select id="type-contribution" name="type-de-contribution" required>
+                        <option value="" selected disabled>Choisir une catégorie</option>
+                        <option value="Témoignage">Témoignage</option>
+                        <option value="Préoccupation">Préoccupation</option>
+                        <option value="Proposition">Proposition</option>
+                        <option value="Expérience">Expérience</option>
+                    </select>
+                </div>
+
+                <div class="champ-formulaire">
+                    <label for="pseudo-jeune">Prénom ou pseudonyme (facultatif)</label>
+                    <input id="pseudo-jeune" name="prenom-ou-pseudonyme" type="text" maxlength="60" autocomplete="nickname">
+                </div>
+
+                <div class="champ-formulaire">
+                    <label for="message-jeune">Votre message</label>
+                    <textarea id="message-jeune" name="message" rows="7" maxlength="5000" required
+                              aria-describedby="aide-message-jeune"></textarea>
+                    <small id="aide-message-jeune">Évitez d'inclure des coordonnées ou des informations privées sur vous ou une autre personne.</small>
+                </div>
+
+                <label class="consentement-formulaire">
+                    <input type="checkbox" name="accord-lecture" value="oui" required>
+                    <span>J'ai compris que l'équipe lira ma contribution et qu'elle ne sera pas publiée sans validation.</span>
+                </label>
+
+                <button class="btn" type="submit">Envoyer ma contribution</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Parlons Éducation. Tous droits réservés.</p>
+        <p><a href="index.html">Retour à l'accueil</a></p>
+    </footer>
+    <script src="script . js.js"></script>
+</body>
+</html>

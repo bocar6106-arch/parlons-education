@@ -1374,93 +1374,51 @@ nav a[aria-current="page"] {
 }
 
 #accueil.hero {
-    position: relative;
-    isolation: isolate;
-    display: grid;
-    grid-template-areas:
-        "eyebrow image"
-        "title image"
-        "copy image"
-        "actions image";
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.92fr);
-    grid-template-rows: auto auto auto auto;
-    align-items: center;
-    justify-items: stretch;
-    gap: 0 6vw;
-    min-height: 610px;
-    padding: 78px clamp(24px, 8vw, 128px);
-    background: linear-gradient(115deg, #fbf9f4 0%, #f6f4ee 53%, #edf1f3 100%);
-    color: var(--bleu-nuit);
-    text-align: left;
-}
-
-#accueil.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    width: 48%;
-    border-radius: 50% 0 0 50%;
-    background: linear-gradient(145deg, #e6edf0, #f0eee7);
-    pointer-events: none;
-}
-
-#accueil.hero::after {
-    content: "";
-    grid-area: image;
-    z-index: 1;
-    min-height: 465px;
-    border: 8px solid rgba(255, 255, 255, 0.86);
-    border-radius: 230px 230px 24px 24px;
+    min-height: 590px;
+    padding: clamp(88px, 12vw, 148px) clamp(24px, 8vw, 128px);
     background:
-        linear-gradient(160deg, rgba(23, 47, 74, 0.02), rgba(23, 47, 74, 0.2)),
+        linear-gradient(120deg, rgba(23, 47, 74, 0.86), rgba(40, 98, 135, 0.58)),
         url("1/Photo5.jpeg") center 35% / cover no-repeat;
-    box-shadow: 0 24px 54px rgba(23, 47, 74, 0.16);
+    color: var(--blanc);
+    text-align: center;
 }
 
 #accueil .hero-eyebrow {
-    grid-area: eyebrow;
-    justify-self: start;
-    margin: 0 0 18px;
-    padding: 8px 13px;
-    border: 1px solid #d8e2e8;
+    margin-bottom: 18px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 999px;
-    background: #edf2f6;
-    color: var(--bleu);
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--blanc);
     font-size: 12px;
     letter-spacing: 0.08em;
-    text-shadow: none;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 #accueil.hero h1 {
-    grid-area: title;
-    max-width: 620px;
+    max-width: 950px;
     margin: 0 0 18px;
-    color: var(--bleu-nuit);
-    font-size: clamp(42px, 5.3vw, 70px);
+    color: var(--blanc);
+    font-size: clamp(42px, 6vw, 72px);
     font-weight: 800;
     line-height: 1.03;
     letter-spacing: -0.045em;
-    text-shadow: none;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
     text-wrap: balance;
 }
 
 #accueil.hero > p:not(.hero-eyebrow) {
-    grid-area: copy;
-    max-width: 560px;
+    max-width: 760px;
     margin: 0 0 28px;
-    color: #536274;
+    color: var(--blanc);
     font-size: clamp(17px, 1.6vw, 20px);
     line-height: 1.7;
-    text-shadow: none;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 #accueil .hero-actions {
-    grid-area: actions;
-    justify-content: flex-start;
-    gap: 10px;
+    justify-content: center;
+    gap: 12px;
 }
 
 .btn {
@@ -1494,8 +1452,29 @@ nav a[aria-current="page"] {
     color: var(--blanc);
 }
 
+#accueil .btn-secondaire {
+    border-color: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--blanc);
+    backdrop-filter: blur(5px);
+}
+
+#accueil .btn-secondaire:hover {
+    background: rgba(255, 255, 255, 0.22);
+    color: var(--blanc);
+}
+
+#accueil .hero-actions .btn:last-child {
+    background: var(--rouge);
+    box-shadow: 0 8px 20px rgba(23, 47, 74, 0.2);
+}
+
+#accueil .hero-actions .btn:last-child:hover {
+    background: #a55343;
+}
+
 .section {
-    padding: clamp(72px, 8vw, 112px) clamp(24px, 8vw, 128px);
+    padding: clamp(76px, 8vw, 108px) clamp(24px, 8vw, 128px);
 }
 
 .section h2 {
@@ -1519,18 +1498,21 @@ nav a[aria-current="page"] {
 
 .bandeau {
     min-height: 0;
-    background-image: none;
-    color: var(--texte);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--blanc);
 }
 
 .bandeau::before {
-    display: none;
+    display: block;
+    background: linear-gradient(125deg, rgba(23, 47, 74, 0.88), rgba(40, 98, 135, 0.62));
 }
 
 .bandeau h2,
 .bandeau p {
-    color: inherit;
-    text-shadow: none;
+    color: var(--blanc);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.38);
 }
 
 .apropos-bandeau,
@@ -1541,7 +1523,25 @@ nav a[aria-current="page"] {
 
 .thematiques-bandeau,
 .contact-bandeau {
-    background-color: #edf1f2;
+    background-color: var(--bleu-nuit);
+}
+
+.bandeau .fondateur-card p,
+.bandeau .points-forts p,
+.bandeau .missions-grid p,
+.bandeau .rubriques p,
+.bandeau .thematiques-list p {
+    color: var(--texte);
+    text-shadow: none;
+}
+
+.bandeau .fondateur-card h3,
+.bandeau .points-forts h3,
+.bandeau .missions-grid h3,
+.bandeau .rubriques h3,
+.bandeau .thematiques-list h3 {
+    color: var(--bleu-nuit);
+    text-shadow: none;
 }
 
 .fondateur-card,
@@ -1626,6 +1626,27 @@ nav a[aria-current="page"] {
     background: #edf1f2;
 }
 
+.prise-de-parole-hero {
+    background:
+        linear-gradient(120deg, rgba(23, 47, 74, 0.86), rgba(40, 98, 135, 0.58)),
+        url("1/Photo3.jpeg") center 38% / cover no-repeat;
+}
+
+.soutien-hero {
+    background:
+        linear-gradient(120deg, rgba(23, 47, 74, 0.86), rgba(40, 98, 135, 0.58)),
+        url("1/Photo13.jpeg") center 42% / cover no-repeat;
+}
+
+.soutien-contenu {
+    min-height: 320px;
+    background: var(--blanc);
+}
+
+.soutien-contenu .btn {
+    margin-top: 28px;
+}
+
 .formulaire-participatif {
     margin-top: 38px;
 }
@@ -1649,14 +1670,6 @@ footer {
         font-size: 13px;
     }
 
-    #accueil.hero {
-        gap: 0 4vw;
-        padding-inline: 6%;
-    }
-
-    #accueil.hero::after {
-        min-height: 410px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1676,55 +1689,26 @@ footer {
         font-size: 15px;
     }
 
-    #accueil.hero {
-        grid-template-areas:
-            "eyebrow"
-            "title"
-            "copy"
-            "actions"
-            "image";
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: auto;
-        gap: 0;
-        min-height: 0;
-        padding: 64px 7%;
-    }
-
-    #accueil.hero::before {
-        top: auto;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 36%;
-        border-radius: 50% 50% 0 0;
-    }
-
-    #accueil.hero::after {
-        width: 100%;
-        min-height: 300px;
-        margin-top: 38px;
-        border-radius: 180px 180px 20px 20px;
-    }
-
-    #accueil .hero-eyebrow {
-        margin-bottom: 16px;
-    }
-
     #accueil.hero h1 {
-        font-size: clamp(40px, 9vw, 58px);
+        font-size: clamp(36px, 9vw, 58px);
     }
 
     #accueil .hero-actions {
-        max-width: 420px;
+        width: 100%;
+        max-width: 460px;
+        flex-direction: column;
         align-items: stretch;
     }
 
     #accueil .hero-actions .btn {
+        min-height: 50px;
+        display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     .section {
-        padding: 68px 6%;
+        padding: 64px 6%;
     }
 
     .galerie-grid figure,
@@ -1735,15 +1719,8 @@ footer {
 
 @media (max-width: 480px) {
     #accueil.hero {
-        padding-inline: 6%;
-    }
-
-    #accueil .hero-actions {
-        width: 100%;
-    }
-
-    #accueil.hero::after {
-        min-height: 240px;
+        min-height: 540px;
+        padding: 72px 6%;
     }
 
 }
