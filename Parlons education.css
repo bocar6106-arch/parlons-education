@@ -115,7 +115,7 @@ nav a {
 
 nav a:hover {
     color: var(--rouge);
-    background: rgba(8, 120, 209, 0.08);
+    background: rgba(40, 110, 106, 0.08);
 }
 
 .visually-hidden {
@@ -368,7 +368,7 @@ nav a:hover {
 }
 
 .profil-hero {
-    background: linear-gradient(135deg, #0878D1, #172B45);
+    background: linear-gradient(135deg, #286e6a, #193b42);
 }
 
 .profil-hero h1 {
@@ -747,7 +747,7 @@ nav a:hover {
 .champ-formulaire input:focus,
 .champ-formulaire select:focus,
 .champ-formulaire textarea:focus {
-    outline: 3px solid rgba(8, 120, 209, 0.2);
+    outline: 3px solid rgba(40, 110, 106, 0.2);
     border-color: var(--bleu);
 }
 
@@ -783,7 +783,7 @@ nav a:hover {
 
 .partenariats-hero {
     background:
-        linear-gradient(rgba(8, 85, 165, 0.55), rgba(7, 85, 165, 0.68)),
+        linear-gradient(rgba(25, 59, 66, 0.58), rgba(25, 59, 66, 0.72)),
         url("1/Photo12.jpeg") center 42% / cover no-repeat;
 }
 
@@ -1497,7 +1497,7 @@ nav a[aria-current="page"] {
 
 .section > p {
     max-width: 760px;
-    color: #536477;
+    color: #52615f;
 }
 
 .bandeau {
@@ -1606,7 +1606,7 @@ nav a[aria-current="page"] {
 }
 
 .participation {
-    background: #f2f6fa;
+    background: #f0eee6;
 }
 
 .formulaire-participatif {
