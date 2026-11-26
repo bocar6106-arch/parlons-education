@@ -1956,3 +1956,17 @@ nav a[aria-current="page"] {
         min-height: 240px;
     }
 }
+
+section.section.bandeau > h2,
+section.section.bandeau > p {
+    color: var(--blanc);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.48);
+}
+
+section.section.bandeau > h2::after {
+    background: var(--jaune);
+}
+
+.bandeau::before {
+    background: linear-gradient(125deg, rgba(25, 59, 66, 0.78), rgba(40, 110, 106, 0.52));
+}
