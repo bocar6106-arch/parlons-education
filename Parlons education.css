@@ -1970,3 +1970,98 @@ section.section.bandeau > h2::after {
 .bandeau::before {
     background: linear-gradient(125deg, rgba(25, 59, 66, 0.78), rgba(40, 110, 106, 0.52));
 }
+
+#accueil.hero {
+    display: flex;
+    min-height: 640px;
+    padding: clamp(100px, 13vw, 156px) clamp(24px, 8vw, 128px);
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background:
+        linear-gradient(115deg, rgba(18, 48, 52, 0.82), rgba(28, 91, 87, 0.58)),
+        url("1/Photo5.jpeg") center 38% / cover no-repeat;
+    color: var(--blanc);
+    text-align: center;
+}
+
+#accueil.hero::before {
+    content: none;
+}
+
+#accueil.hero::after {
+    content: none;
+}
+
+#accueil .hero-eyebrow {
+    align-self: center;
+    margin: 0 0 20px;
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--blanc);
+}
+
+#accueil.hero h1 {
+    max-width: 900px;
+    margin-bottom: 20px;
+    color: var(--blanc);
+    font-size: clamp(42px, 6vw, 76px);
+    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.38);
+}
+
+#accueil.hero > p:not(.hero-eyebrow) {
+    max-width: 760px;
+    margin-bottom: 32px;
+    color: var(--blanc);
+    text-shadow: 0 2px 9px rgba(0, 0, 0, 0.45);
+}
+
+#accueil .hero-actions {
+    justify-content: center;
+    gap: 12px;
+}
+
+#accueil .hero-actions .btn {
+    min-height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#accueil .hero-actions .btn-secondaire {
+    border-color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--blanc);
+}
+
+#accueil .hero-actions .btn-secondaire:hover {
+    background: rgba(255, 255, 255, 0.22);
+    color: var(--blanc);
+}
+
+#accueil .hero-actions .btn:last-child {
+    background: var(--rouge);
+    color: var(--blanc);
+}
+
+@media (max-width: 768px) {
+    #accueil.hero {
+        min-height: 580px;
+        padding: 80px 7%;
+        background-position: 58% center;
+    }
+
+    #accueil .hero-actions {
+        width: 100%;
+        max-width: 460px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    #accueil.hero {
+        min-height: 560px;
+        padding: 72px 6%;
+    }
+}
